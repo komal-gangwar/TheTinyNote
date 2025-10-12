@@ -4,7 +4,7 @@
 
 ## Author
 
-👤 **Author: Komal Gangwar - https://github.com/komal-gangwar**
+👤 **Komal Gangwar**
 
 - Twitter: [@https:\/\/x.com\/komalgangwar19](https://twitter.com/https://x.com/komalgangwar19)
 - Github: [@komal-gangwar](https://github.com/komal-gangwar)
