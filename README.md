@@ -1,9 +1,4 @@
 <h1 align="center">Welcome to The Tiny Note 👋</h1>
-<p>
-  <a href="https://twitter.com/https:\/\/x.com\/komalgangwar19" target="_blank">
-    <img alt="Twitter: https:\/\/x.com\/komalgangwar19" src="https://img.shields.io/twitter/follow/https:\/\/x.com\/komalgangwar19.svg?style=social" />
-  </a>
-</p>
 
 > The Tiny Note is a lightweight notes app built with the MERN stack during a 3-day workshop. It allows users to create, edit, and manage notes with a simple, responsive interface, demonstrating core concepts like CRUD operations, routing, and MongoDB integration.
 
