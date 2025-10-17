@@ -22,6 +22,8 @@ body {
   display: flex;
   flex-direction: column;
   padding: 20px;
+  /* MODIFICATION: Center the form horizontally */
+  align-items: center;
 }
 
 /* Navbar styling */
@@ -47,7 +49,8 @@ body {
 /* NoteForm styling */
 .note-form {
   width: 100%;
-  max-width: 400px;
+  /* MODIFICATION: Increased width */
+  max-width: 600px;
   margin: 0 0 20px 0;
   background-color: #d9f0e1;
   /* Pastel light green (New Note Form) */
@@ -65,6 +68,11 @@ body {
   border-radius: 8px;
   font-size: 1rem;
   resize: none;
+}
+
+.note-form textarea {
+  /* MODIFICATION: Reduced default height */
+  min-height: 80px;
 }
 
 .note-form button {
@@ -91,8 +99,13 @@ body {
   gap: 20px;
   padding: 0;
   margin-top: 0;
+  /* Keep notes justified to the start */
   justify-content: flex-start;
   align-items: flex-start;
+  /* Allow the grid to take full width but center it if content is smaller */
+  width: 100%;
+  max-width: 1240px;
+  /* Optional: limit the total grid width */
 }
 
 /* NoteCard styling - Focus on content-fitted boxes */
@@ -101,12 +114,10 @@ body {
   flex-direction: column;
   justify-content: space-between;
 
-  /* CRUCIAL: Let content determine width, but constrain it */
+  /* MODIFICATION: Set Fixed Width and Height */
   flex: 0 0 auto;
-  min-width: 200px;
-  /* Smallest practical width */
-  max-width: 300px;
-  /* Limits max size */
+  width: 250px;
+  height: 250px;
 
   /* The background color is now ONLY set by the inline style in NoteCard.jsx */
 
@@ -119,6 +130,10 @@ body {
 /* Note Card Editor Styles (Fixes the input breakout issue) */
 .note-card-editor {
   width: 100%;
+  /* Ensure editor components fit within the fixed height */
+  flex-grow: 1;
+  display: flex;
+  flex-direction: column;
 }
 
 .note-card-editor input,
@@ -133,22 +148,34 @@ body {
 }
 
 .note-card-editor textarea {
-  min-height: 100px;
+  /* Allow textarea to grow in the limited space, with scroll */
+  min-height: 80px;
+  flex-grow: 1;
+  overflow-y: auto;
 }
 
 /* Responsive adjustments for NoteCard */
 @media (max-width: 900px) {
   .note-card {
-    /* Allow two columns on medium screens */
-    flex-basis: calc(50% - 10px);
+    /* Allow multiple columns, but keep fixed width */
+    flex-basis: auto;
+    width: 250px;
   }
 }
 
 @media (max-width: 600px) {
   .note-card {
-    /* Single column on small screens */
+    /* Single column on small screens (e.g., center one card) */
     flex-basis: 100%;
-    max-width: 100%;
+    max-width: 250px;
+    /* Limit single card width to keep it neat */
+    margin: 0 auto;
+    /* Center single card */
+  }
+
+  /* Center the grid items on small screens */
+  .notes-grid {
+    justify-content: center;
   }
 }
 
@@ -163,6 +190,8 @@ body {
   margin-bottom: 10px;
   /* Allow content to push the box height */
   flex-grow: 1;
+  /* MODIFICATION: Add scrolling for content overflow */
+  overflow-y: auto;
 }
 
 .note-card-buttons {
@@ -170,6 +199,8 @@ body {
   justify-content: flex-end;
   gap: 8px;
   margin-top: auto;
+  /* Ensure buttons don't scroll with content */
+  flex-shrink: 0;
 }
 
 .note-card button {
